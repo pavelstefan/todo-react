@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import InProgress from "./pages/InProgress";
+import Finished from "./pages/Finished";
+import TodoInput from "./components/TodoInput";
+import { Container } from '@mui/material';
+import ITodo, { TODO_STATUS } from './types/Todo';
+import { useState } from 'react';
 
 function App() {
+  const [items, setItems] = useState<ITodo[]>([]);
+
+  const finished = items.filter(item => item.status === TODO_STATUS.FINISHED);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <TodoInput />
+      <Routes>
+        <Route path="/" element={<InProgress />} />
+        <Route path="finished" element={<Finished items={finished} />} />
+      </Routes>
+    </Container>
   );
 }
 
