@@ -3,10 +3,13 @@ import { TODO_STATUS } from '../types/Todo';
 import React, { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { useAddItem } from '../hooks/TodoContext';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../store/todo.actions';
 
 const TodoInput: React.FC = () => {
     const [value, setValue] = useState('');
     const addTodo = useAddItem();
+    const dispatch = useDispatch();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
@@ -17,11 +20,13 @@ const TodoInput: React.FC = () => {
             return;
         }
 
-        addTodo({
+        const item = {
             description: value,
             id: uuid(),
             status: TODO_STATUS.CREATED
-        })
+        };
+        addTodo(item);
+        dispatch(addItem(item));
         setValue('');
     }
 
