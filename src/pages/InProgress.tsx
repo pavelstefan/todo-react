@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 const InProgress: React.FC = () => {
     const contextItems = useInProgressItems();
     const items = useSelector(inProgressItemsSelector);
+
     return (
         <Stack direction='row' flexWrap='wrap' gap='10px'>
             <Stack>

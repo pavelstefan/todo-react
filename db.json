@@ -1,0 +1,61 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "a test title",
+      "author": "typicode",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "todo": [
+    {
+      "description": "something",
+      "status": "started",
+      "id": 1
+    },
+    {
+      "description": "lkn",
+      "status": "finished",
+      "id": 2
+    },
+    {
+      "description": "asd",
+      "status": "created",
+      "id": 3
+    },
+    {
+      "description": "asklsang",
+      "status": "created",
+      "id": 4
+    },
+    {
+      "description": "test",
+      "status": "created",
+      "id": 5
+    },
+    {
+      "description": "aaa",
+      "status": "created",
+      "id": 6
+    },
+    {
+      "description": "aklnaskg",
+      "status": "created",
+      "id": 7
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom'
-import TodoContextProvider from './hooks/TodoContext';
+// import TodoContextProvider from './hooks/TodoContext';
 import store from './store/store';
 import { Provider } from 'react-redux';
 
@@ -11,9 +11,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <TodoContextProvider>
-          <App />
-        </TodoContextProvider>
+        {/* <TodoContextProvider> */}
+        <App />
+        {/* </TodoContextProvider> */}
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,

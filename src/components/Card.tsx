@@ -22,26 +22,8 @@ const Card: React.FC<{ item: ITodo }> = ({ item }) => {
     const dispatch = useDispatch();
 
     const handleClick = () => {
-        switch (item.status) {
-            case TODO_STATUS.CREATED: {
-                updateItemContext(item.id, TODO_STATUS.STARTED);
-                dispatch(updateItem(item.id, TODO_STATUS.STARTED));
-                break;
-            }
-            case TODO_STATUS.STARTED: {
-                updateItemContext(item.id, TODO_STATUS.FINISHED);
-                dispatch(updateItem(item.id, TODO_STATUS.FINISHED));
-                break;
-            }
-            case TODO_STATUS.FINISHED: {
-                updateItemContext(item.id, TODO_STATUS.CREATED);
-                dispatch(updateItem(item.id, TODO_STATUS.CREATED));
-                break;
-            }
-            default: {
-                console.log(`Wrong status ${item.status}`)
-            }
-        }
+        dispatch(updateItem(item.id));
+        
     }
 
     return (

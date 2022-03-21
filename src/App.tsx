@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import InProgress from "./pages/InProgress";
 import Finished from "./pages/Finished";
@@ -5,8 +6,15 @@ import TodoInput from "./components/TodoInput";
 import { Container } from '@mui/material';
 import { Stack } from '@mui/material';
 import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { getItems } from './store/todo.actions';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getItems());
+  }, []);
 
   return (
     <Container>

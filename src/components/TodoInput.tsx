@@ -20,13 +20,15 @@ const TodoInput: React.FC = () => {
             return;
         }
 
-        const item = {
-            description: value,
-            id: uuid(),
-            status: TODO_STATUS.CREATED
-        };
-        addTodo(item);
-        dispatch(addItem(item));
+        // const item = {
+        //     description: value,
+        //     id: uuid(),
+        //     status: TODO_STATUS.CREATED
+        // };
+        // addTodo(item);
+
+        dispatch(addItem(value));
+        
         setValue('');
     }
 
