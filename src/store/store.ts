@@ -3,9 +3,11 @@ import todoReducer from './todo.reducer';
 import AppState from '../types/app-state';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './root-saga';
+import { userReducer } from './user';
 
 const rootReducer = combineReducers<AppState>({
     todo: todoReducer,
+    user: userReducer
 });
 
 const sagaMiddleware = createSagaMiddleware();
